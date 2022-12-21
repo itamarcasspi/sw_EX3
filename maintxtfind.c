@@ -5,9 +5,9 @@
 int main()
 {
 
-    char line[LINE_MAXSIZE];
-    char word[WORD_MAXSIZE];
-    char choice[WORD_MAXSIZE];
+    char *line = malloc(LINE_MAXSIZE);
+    char *word = malloc(WORD_MAXSIZE);
+    char *choice = malloc(WORD_MAXSIZE);
 
     memset(line, '\0', LINE_MAXSIZE);
     memset(word, '\0', WORD_MAXSIZE);
@@ -48,6 +48,8 @@ int main()
 
         }
     }
-
+    free(line);
+    free(choice);
+    free(word);
     return 0;
 }

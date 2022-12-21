@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "third.h"
 
 #define ARRAY_MAXSIZE 50
 
 int main()
 {
-    int arr[ARRAY_MAXSIZE];
+    int *arr = malloc(sizeof(int)*ARRAY_MAXSIZE);
     for (int i = 0; i < ARRAY_MAXSIZE; i++)
     {
         scanf(" %d",(arr+i));
@@ -25,10 +26,10 @@ int main()
     {
         printf("%d,",*(arr+i));
     }
-    printf("%d",*(arr+ARRAY_MAXSIZE-1));
+    printf("%d\n",*(arr+ARRAY_MAXSIZE-1));
 
 
-
+    free(arr);
 
     return 0;
 }
