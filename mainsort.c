@@ -21,10 +21,12 @@ int main()
     // shift_element(arr,2);
     insertion_sort(arr,ARRAY_MAXSIZE);
 
-    for (int i = 0; i < ARRAY_MAXSIZE; i++)
+    for (int i = 0; i < ARRAY_MAXSIZE-1; i++)
     {
         printf("%d,",*(arr+i));
     }
+    printf("%d",*(arr+i));
+
     printf("\n");
 
 
