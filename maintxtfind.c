@@ -21,7 +21,7 @@ int main()
 
     memset(line, '\0', LINE_MAXSIZE);
     
-    if (*choice == 'b')
+    if (*choice == 'a')
     {
         while (getline_(line) > 0)
         {
@@ -33,7 +33,7 @@ int main()
             }
         }
     }
-    else if(strcmp(choice,"a")==0)
+    else if(strcmp(choice,"b")==0)
     {
         
         char curr_word[WORD_MAXSIZE];
