@@ -69,7 +69,10 @@ int getword(char w[WORD_MAXSIZE])
     char c;
     for (i = 0; i < WORD_MAXSIZE; i++)
     {
-        scanf("%c", &c);
+        if(scanf("%c", &c)<1)
+        {
+            return i;
+        }
         
         if (c == '\n' || c == '\0' || c == '\t' || c == ' ' )
         {
