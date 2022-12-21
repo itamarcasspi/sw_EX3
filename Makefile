@@ -5,8 +5,8 @@ all: isort txtfind
 isort: third.o mainsort.o
 	gcc mainsort.o third.o -o isort
 
-txtfind: third.o maintxtfind.o
-	gcc maintxtfind.o third.o -o txtfind
+findtxt: third.o maintxtfind.o
+	gcc maintxtfind.o third.o -o findtxt
 
 third.o: third.c third.h
 	gcc -Wall -g third.c -c
