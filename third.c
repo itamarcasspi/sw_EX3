@@ -44,13 +44,18 @@ void insertion_sort(int *arr, int len)
 
 int getline_(char s[LINE_MAXSIZE])
 {
+    
     char c;
-    int i;
-    for (i = 0; i < LINE_MAXSIZE; i++)
+    int i=0;
+    for (; i < LINE_MAXSIZE; i++)
     {
-        scanf("%c", &c);
+        if(scanf("%c", &c) < 1)
+        {
+            return i;
+        }
+
         *(s + i) = c;
-        if (c == '\n')
+        if (c == '\n' || c == '\0')
         {
             break;
         }
