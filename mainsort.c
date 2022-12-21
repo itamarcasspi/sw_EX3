@@ -25,7 +25,7 @@ int main()
     {
         printf("%d,",*(arr+i));
     }
-    printf("%d",*(arr+i));
+    printf("%d",*(arr+ARRAY_MAXSIZE-1));
 
     printf("\n");
 
