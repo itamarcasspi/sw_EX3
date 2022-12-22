@@ -36,7 +36,9 @@ int main()
     else if(strcmp(choice,"b")==0)
     {
         
-        char curr_word[WORD_MAXSIZE];
+        char *curr_word = malloc(WORD_MAXSIZE);
+        memset(curr_word, '\0', WORD_MAXSIZE);
+
         while (getword(curr_word) > 0)
         {
             // printf("%s,%s\n",curr_word,word);
@@ -44,9 +46,10 @@ int main()
             {
                 printf("%s\n", curr_word);
             }
-            memset(curr_word, '\0', LINE_MAXSIZE);
+            memset(curr_word, '\0', WORD_MAXSIZE);
 
         }
+        free(curr_word);
     }
     free(line);
     free(choice);

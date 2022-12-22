@@ -6,7 +6,7 @@
 
 int main()
 {
-    int *arr = malloc(sizeof(int)*ARRAY_MAXSIZE);
+    int *arr = (int*)malloc(sizeof(int)*ARRAY_MAXSIZE);
     for (int i = 0; i < ARRAY_MAXSIZE; i++)
     {
         scanf(" %d",(arr+i));
@@ -22,7 +22,7 @@ int main()
     // shift_element(arr,2);
     insertion_sort(arr,ARRAY_MAXSIZE);
 
-    for (int i = 0; i < ARRAY_MAXSIZE-1; i++)
+    for (size_t i = 0; i < ARRAY_MAXSIZE-1; i++)
     {
         printf("%d,",*(arr+i));
     }

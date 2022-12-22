@@ -19,26 +19,26 @@ void shift_element(int *arr, int i)
 void insertion_sort(int *arr, int len)
 {
 
-    for (int i = 0; i < len - 1; i++)
+    for (size_t i = 1; i < len - 1; i++)
     {
         if (*(arr + i) > *(arr + i + 1))
         {
-            int j = i;
-            while (*(arr + j - 1) > *(arr + i + 1) && j > 0)
+            size_t j = i;
+            int current = *(arr + j - 1);
+            int vs = *(arr + i + 1);
+            while ( current > vs)
             {
-                // printf("**%d_%d***\n",*(arr+j),*(arr+i+1));
                 j--;
+                if(j==0)
+                {
+                    break;
+                }
+                current = *(arr + j - 1);
+                vs = *(arr + i + 1);
             }
-            // printf("j[%d],i[%d]:",j,i);
             shift_element(arr + j, i - j + 1);
         }
 
-        // printf("iteration-%d-",i);
-        // for (int i = 0; i < 6; i++)
-        // {
-        //     printf("[%d],", *(arr + i));
-        // }
-        // printf("\n");
     }
 }
 
