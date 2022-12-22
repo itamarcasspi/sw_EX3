@@ -19,22 +19,28 @@ void shift_element(int *arr, int i)
 void insertion_sort(int *arr, int len)
 {
 
-    for (size_t i = 1; i < len - 1; i++)
+    for (size_t i = 0; i < len - 1; i++)
     {
         if (*(arr + i) > *(arr + i + 1))
         {
             size_t j = i;
+            if(j == 0)
+            {
+                j++;
+            }
             int current = *(arr + j - 1);
             int vs = *(arr + i + 1);
             while ( current > vs)
             {
                 j--;
+
                 if(j==0)
                 {
                     break;
                 }
                 current = *(arr + j - 1);
                 vs = *(arr + i + 1);
+
             }
             shift_element(arr + j, i - j + 1);
         }
