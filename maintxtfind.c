@@ -28,7 +28,7 @@ int main()
             
             if (substring(line, word) == 1)
             {
-                printf("%s", line);
+                printf("%s\n", line);
                 memset(line, '\0', LINE_MAXSIZE);
             }
         }

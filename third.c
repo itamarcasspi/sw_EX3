@@ -59,12 +59,16 @@ int getline_(char s[LINE_MAXSIZE])
         {
             return i;
         }
-
-        *(s + i) = c;
+            
         if (c == '\n' || c == '\0')
         {
             break;
         }
+        if(c != '\r')
+        {
+            *(s + i) = c;
+        }
+
     }
     return i;
 }
